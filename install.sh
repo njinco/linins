@@ -2,7 +2,7 @@
 set -euo pipefail
 
 # === Config (edit these to your repo) ========================================
-RAW_BASE_URL="${RAW_BASE_URL:-https://raw.githubusercontent.com/<your-user>/<your-repo>/main}"
+RAW_BASE_URL="${RAW_BASE_URL:-https://raw.githubusercontent.com/njinco/linins/main}"
 PKG_DIR_URL="$RAW_BASE_URL/packages"
 
 # Enable/disable “bundles” via env or flags:

@@ -1,0 +1,32 @@
+# General network troubleshooting
+traceroute
+mtr-tiny
+nmap
+netcat-openbsd
+socat
+iperf3
+telnet
+
+# Packet capture / analysis
+tcpdump
+wireshark
+tshark
+ethtool
+
+# SNMP tools
+snmp
+snmpd
+snmp-mibs-downloader
+
+# Cisco / networking specific
+putty
+putty-tools
+minicom
+screen
+
+# Misc utilities
+whois
+arp-scan
+bridge-utils
+vlan
+
