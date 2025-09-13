@@ -1,0 +1,9 @@
+make
+gcc
+g++
+pkg-config
+python3-venv
+pipx
+ripgrep
+fd-find
+

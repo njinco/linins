@@ -1,0 +1,33 @@
+# Essentials
+curl
+wget
+git
+vim
+nano
+htop
+jq
+tree
+zip
+unzip
+xz-utils
+tar
+tmux
+screen
+ncdu
+software-properties-common
+ca-certificates
+
+# Networking/admin
+openssh-client
+net-tools
+iproute2
+iputils-ping
+traceroute
+mtr-tiny
+dnsutils
+nmap
+
+# PuTTY (CLI and GUI tools)
+putty
+putty-tools
+

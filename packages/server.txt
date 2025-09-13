@@ -1,0 +1,8 @@
+ufw
+fail2ban
+rsync
+logrotate
+python3
+python3-pip
+build-essential
+
