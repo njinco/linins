@@ -1,0 +1,4 @@
+# Example bundle list for @file usage
+# You can use commas or whitespace, and comments are allowed.
+base,desktop,browser
+dev

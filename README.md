@@ -12,6 +12,8 @@ git clone git@github.com:njinco/linins.git
 cd linins
 chmod +x install.sh
 ./install.sh --bundles base,desktop --with-docker
+./install.sh --bundles base,desktop,browser
+./install.sh --bundles @packages/bundles.example.txt
 ```
 
 ### 2. One-liner (remote execution)
@@ -45,8 +47,17 @@ gh api repos/njinco/linins/contents/install.sh --jq '.content' | base64 -d | bas
 
 ## Configuration knobs
 - `--bundles base,desktop` or `BUNDLES="base,desktop"`: comma-separated list of bundle files to install (see `packages/`).
+- `--bundles +desktop,dev`: prepend defaults (`base`) and add more bundles.
+- `--bundles @/path/to/bundles.txt`: load bundle names from a local file (comma or whitespace separated, `#` for comments). Example file: `packages/bundles.example.txt`.
 - `--with-docker` or `WITH_DOCKER=1`: installs Docker Engine + Compose plugin.
 - `--with-tailscale` or `WITH_TAILSCALE=1`: installs the official Tailscale package.
+- `--dry-run` or `DRY_RUN=1`: prints intended actions without making changes.
+- `--list-bundles`: lists bundle files from a local `packages/` directory.
+- `--print-packages`: prints the resolved, deduplicated package list and exits.
+- `--validate-packages` or `VALIDATE_PACKAGES=1`: verifies packages exist in APT cache before install.
+- `--validate-only`: validates packages and exits without installing.
+- `--version`: prints the git short hash when run from a clone.
+- `--step` or `--interactive`: prompts before each major step.
 - `RAW_BASE_URL`: root URL hosting `install.sh` + `packages/`. Override this when mirroring or hosting elsewhere.
 
 The script deduplicates packages across bundles and runs apt in non-interactive mode. You can edit any of the `packages/*.txt` files and rerun the installer to converge on the new state.
@@ -57,3 +68,11 @@ The script deduplicates packages across bundles and runs apt in non-interactive 
 3. Re-run the installer with `BUNDLES="base,devops"` (or use `--bundles base,devops`).
 
 Because `install.sh` only relies on static text files, you can fork this repo, adjust package selections, and point `RAW_BASE_URL` to your fork for team-specific setups.
+
+## Available bundles
+- `base`: essentials, CLI tools, and common networking utilities.
+- `desktop`: desktop apps and GUI tools.
+- `browser`: Chromium and Firefox.
+- `dev`: build tools and developer utilities.
+- `server`: server-side utilities and security tooling.
+- `neteng`: network engineering and troubleshooting tools.

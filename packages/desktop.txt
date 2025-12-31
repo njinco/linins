@@ -1,7 +1,6 @@
 gnome-tweaks
 gnome-terminal
 xclip
-chromium-browser | chromium
 vlc
 gparted
-
+wireshark
